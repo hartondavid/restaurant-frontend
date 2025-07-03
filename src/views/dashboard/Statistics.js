@@ -37,7 +37,7 @@ const Statistics = () => {
             <BarChart
                 dataset={data}
                 yAxis={[{ scaleType: 'band', dataKey: 'month_name' }]}
-                series={[{ dataKey: 'total', label: 'Total', valueFormatter }]}
+                series={[{ dataKey: 'total', label: 'Total', valueFormatter, color: 'rgb(22, 173, 68)' }]}
                 layout="horizontal"
                 {...chartSetting}
             />

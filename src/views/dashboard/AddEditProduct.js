@@ -114,7 +114,7 @@ const CreateEditProduct = ({
     };
     return (
         <>
-            <Box sx={{ marginLeft: '10px', marginRight: '10px' }}  >
+            <Box sx={{ marginLeft: '20px', marginRight: '10px', marginTop: '20px', marginBottom: '20px' }}  >
                 <Typography variant="h4">
                     <span className="font-bold text-black">{productId === "0" ? "Adauga produs" : "Editeaza produs"}</span>
                 </Typography>
@@ -256,7 +256,7 @@ const CreateEditProduct = ({
                                 </DialogContent>
                                 <DialogActions>
                                     <Button onClick={handleCloseDialog} color="error" variant="contained" >Anuleaza</Button>
-                                    <Button onClick={handleConfirmForImagePath} color="primary" variant="contained" >Confirma</Button>
+                                    <Button onClick={handleConfirmForImagePath} variant="contained" sx={{ backgroundColor: '#343434', color: 'white' }} >Confirma</Button>
 
                                 </DialogActions>
                             </Dialog>

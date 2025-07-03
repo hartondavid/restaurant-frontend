@@ -131,7 +131,7 @@ const Login = () => {
                         width: '20%', margin: 'auto',
                         marginTop: '100px', backgroundColor: 'white', padding: '20px', borderRadius: '10px'
                     }}>
-                    <Typography variant="h3">Intra in cont</Typography>
+                    <Typography variant="h4">Intra in cont</Typography>
                     <TextField
                         fullWidth
                         margin="normal"
