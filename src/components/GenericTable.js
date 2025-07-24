@@ -8,6 +8,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import DownloadIcon from '@mui/icons-material/Download';
+import { getImageUrl } from '../utils/imageUtils';
 
 
 const GenericTable = ({ title, subtitle, buttonText, buttonAction, columns, data, childrenColumns = [], childrenData, isExtendedTable = false, edit, onEdit, actions = [], childrenActions = [] }) => {
@@ -120,7 +121,7 @@ const GenericTable = ({ title, subtitle, buttonText, buttonAction, columns, data
                                             <TableCell key={`generic-table-filepath-${column.field}`}>
                                                 {isImageFile(row[column.field]) ? (
                                                     <img
-                                                        src={`${process.env.REACT_APP_API_URL}/${row[column.field]}`}
+                                                        src={process.env.NODE_ENV === 'development' ? row[column.field] : getImageUrl(row[column.field])}
                                                         alt="file"
                                                         width={150}
                                                         onClick={() => handleDownload(`${process.env.REACT_APP_API_URL}/${row[column.field]}`)} // Click to download

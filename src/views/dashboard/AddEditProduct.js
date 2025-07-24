@@ -6,6 +6,7 @@ import { showErrorToast, showSuccessToast } from "../../utils/utilFunctions";
 import EditIcon from '@mui/icons-material/Edit';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import { addStyleToTextField } from "../../utils/utilFunctions";
+import { getImageUrl } from "../../utils/imageUtils";
 
 const CreateEditProduct = ({
 }) => {
@@ -42,7 +43,7 @@ const CreateEditProduct = ({
     const parseProductResponse = (data) => {
         setFormData({
             name: data.name || '',
-            image: data.image ? `${process.env.REACT_APP_API_URL}/${data.image}` : null,
+            image: process.env.NODE_ENV === 'development' ? data.image : getImageUrl(data.image),
             description: data.description || '',
             price: data.price || 0,
             quantity: data.quantity || 0,
