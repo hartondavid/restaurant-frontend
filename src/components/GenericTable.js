@@ -88,7 +88,7 @@ const GenericTable = ({ title, subtitle, buttonText, buttonAction, columns, data
                     <TableBody>
                         {paginatedData.map((row, index) => (
                             <React.Fragment key={`generic_table_row_paginated_parent_${row.id}_${index}`}>
-                                <TableRow key={`generic_table_row_paginated_${row.id}_${index}`}>{isExtendedTable === true && (
+                                <TableRow key={`generic_table_row_paginated_${row.id}_${index}`} onClick={() => toggleRow(row.id)}>{isExtendedTable === true && (
                                     <TableCell>
                                         <IconButton
                                             aria-label="expand row"
