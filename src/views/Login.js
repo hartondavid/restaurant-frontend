@@ -128,7 +128,7 @@ const Login = () => {
                 {/* <Navbar /> */}
                 <Box component="form" noValidate autoComplete="off"
                     onKeyDown={handleKeyPress} sx={{
-                        width: '40%', margin: 'auto',
+                        width: '20%', margin: 'auto',
                         marginTop: '100px', backgroundColor: 'white', padding: '20px', borderRadius: '10px'
                     }}>
                     <Typography variant="h4">Intra in cont</Typography>
