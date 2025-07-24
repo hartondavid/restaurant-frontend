@@ -124,11 +124,11 @@ const GenericTable = ({ title, subtitle, buttonText, buttonAction, columns, data
                                                         src={process.env.NODE_ENV === 'development' ? row[column.field] : getImageUrl(row[column.field])}
                                                         alt="file"
                                                         width={150}
-                                                        onClick={() => handleDownload(`${process.env.REACT_APP_API_URL}/${row[column.field]}`)} // Click to download
+                                                        onClick={() => handleDownload(process.env.NODE_ENV === 'development' ? row[column.field] : getImageUrl(row[column.field]))} // Click to download
                                                     />
                                                 ) : (
                                                     <IconButton
-                                                        onClick={() => handleDownload(`${process.env.REACT_APP_API_URL}/${row[column.field]}`)}
+                                                        onClick={() => handleDownload(process.env.NODE_ENV === 'development' ? row[column.field] : getImageUrl(row[column.field]))}
                                                     >
                                                         <DownloadIcon sx={{ color: '#4A90E2' }} /> {/* File icon */}
                                                     </IconButton>
@@ -189,13 +189,13 @@ const GenericTable = ({ title, subtitle, buttonText, buttonAction, columns, data
                                                                                 <TableCell key={`generic-table-filepath-${column.field}`}>
                                                                                     {isImageFile(childRow[column.field]) ? (
                                                                                         <img
-                                                                                            src={`${process.env.REACT_APP_API_URL}/${childRow[column.field]}`} alt={childRow.name}
+                                                                                            src={process.env.NODE_ENV === 'development' ? row[column.field] : getImageUrl(row[column.field])} alt={childRow.name}
                                                                                             width={150}
-                                                                                            onClick={() => handleDownload(`${process.env.REACT_APP_API_URL}/${childRow[column.field]}`)} // Click to download
+                                                                                            onClick={() => handleDownload(process.env.NODE_ENV === 'development' ? row[column.field] : getImageUrl(row[column.field]))} // Click to download
                                                                                         />
                                                                                     ) : (
                                                                                         <IconButton
-                                                                                            onClick={() => handleDownload(`${process.env.REACT_APP_API_URL}/${childRow[column.field]}`)}
+                                                                                            onClick={() => handleDownload(process.env.NODE_ENV === 'development' ? row[column.field] : getImageUrl(row[column.field]))}
                                                                                         >
                                                                                             <DownloadIcon sx={{ color: '#4A90E2' }} /> {/* File icon */}
                                                                                         </IconButton>

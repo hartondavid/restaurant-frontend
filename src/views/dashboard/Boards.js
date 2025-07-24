@@ -286,9 +286,6 @@ const Boards = ({ userRights }) => {
     const handleAddProductsToBoard = () => {
 
         setOpenAddProductDialog(false);
-        apiGetProductsByBoardId((response) => {
-            setData(response.data)
-        }, showErrorToast, boardId);
 
     }
 
