@@ -121,14 +121,14 @@ const GenericTable = ({ title, subtitle, buttonText, buttonAction, columns, data
                                             <TableCell key={`generic-table-filepath-${column.field}`}>
                                                 {isImageFile(row[column.field]) ? (
                                                     <img
-                                                        src={process.env.NODE_ENV === 'development' ? row[column.field] : getImageUrl(row[column.field])}
+                                                        src={getImageUrl(row[column.field])}
                                                         alt="file"
                                                         width={150}
-                                                        onClick={() => handleDownload(process.env.NODE_ENV === 'development' ? row[column.field] : getImageUrl(row[column.field]))} // Click to download
+                                                        onClick={() => handleDownload(getImageUrl(row[column.field]))} // Click to download
                                                     />
                                                 ) : (
                                                     <IconButton
-                                                        onClick={() => handleDownload(process.env.NODE_ENV === 'development' ? row[column.field] : getImageUrl(row[column.field]))}
+                                                        onClick={() => handleDownload(getImageUrl(row[column.field]))}
                                                     >
                                                         <DownloadIcon sx={{ color: '#4A90E2' }} /> {/* File icon */}
                                                     </IconButton>
@@ -189,21 +189,19 @@ const GenericTable = ({ title, subtitle, buttonText, buttonAction, columns, data
                                                                                 <TableCell key={`generic-table-filepath-${column.field}`}>
                                                                                     {isImageFile(childRow[column.field]) ? (
                                                                                         <img
-                                                                                            src={process.env.NODE_ENV === 'development' ? childRow[column.field] : getImageUrl(childRow[column.field])} alt={childRow.name}
+                                                                                            src={getImageUrl(childRow[column.field])} alt={childRow.name}
                                                                                             width={150}
-                                                                                            onClick={() => handleDownload(process.env.NODE_ENV === 'development' ? childRow[column.field] : getImageUrl(childRow[column.field]))} // Click to download
+                                                                                            onClick={() => handleDownload(getImageUrl(childRow[column.field]))} // Click to download
                                                                                         />
                                                                                     ) : (
                                                                                         <IconButton
-                                                                                            onClick={() => handleDownload(process.env.NODE_ENV === 'development' ? childRow[column.field] : getImageUrl(childRow[column.field]))}
+                                                                                            onClick={() => handleDownload(getImageUrl(childRow[column.field]))}
                                                                                         >
                                                                                             <DownloadIcon sx={{ color: '#4A90E2' }} /> {/* File icon */}
                                                                                         </IconButton>
                                                                                     )}
                                                                                 </TableCell>
                                                                             );
-
-
                                                                         } else {
 
                                                                             return (<TableCell key={`generic-table-child-column-${childRow.id}-${column.field}`}>
@@ -211,8 +209,6 @@ const GenericTable = ({ title, subtitle, buttonText, buttonAction, columns, data
                                                                             </TableCell>
                                                                             )
                                                                         }
-
-
                                                                     })}
                                                                     {childrenActions && childrenActions.length > 0 && (
                                                                         <TableCell style={{ width: '0', whiteSpace: 'nowrap' }}>
